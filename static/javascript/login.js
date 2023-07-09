@@ -42,7 +42,3 @@ const signIn = function(){
     });
     return false;
 }
-
-console.log("SETUP DONE");
-//const form = document.getElementById("signin_form");
-//form.addEventListener("submit", signIn);  // onsubmit="signIn(); return false;"
