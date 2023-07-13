@@ -27,6 +27,8 @@ password: password
 <script src="aws-sdk.min.js"></script>
 ```
 
+See <https://www.npmjs.com/package/amazon-cognito-identity-js>
+
 ## Infrastructure and configuration
 
 Need two buckets, one configured as a
