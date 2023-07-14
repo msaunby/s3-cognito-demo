@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,13 +8,25 @@
     <script src="javascript/amazon-cognito-identity.min.js"></script>
     <script src="javascript/aws-sdk.min.js"></script>
 </head>
+
 <body>
     <H1>Demo</H1>
-    <div id="LogInOut"></div> 
+    <div id="LogInOut"></div>
     <hr>
     <div id="s3ListOut"></div>
     <script src="javascript/authenticate.js"></script>
 
-    <a href="/static/fetchs3.html?get=data/hello.html">data/hello.html</a>
+    <h2>Protected content</h2>
+    <p>
+        Only authenticated users can access this content.
+    </p>
+    <p>
+        <a href="fetchs3.html?get=data/hello.html">data/hello.html</a> <br>
+
+        <a href="fetchs3.html?get=data/sample.csv">data/sample.csv</a> <br>
+
+        <a href="plot.html">Example plot of sample.csv</a> <br>
+    </p>
 </body>
+
 </html>
