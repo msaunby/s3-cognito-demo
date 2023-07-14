@@ -1,6 +1,6 @@
-import "/static/javascript/amazon-cognito-identity.min.js";
-import "/static/javascript/aws-sdk.min.js";
-import * as CONFIG from "/static/javascript/CONFIG.js";
+import "./amazon-cognito-identity.min.js";
+import "./aws-sdk.min.js";
+import * as CONFIG from "./CONFIG.js";
 
 const poolData = {
     UserPoolId: CONFIG.AWS_COGNITO_USER_POOL_ID,

@@ -1,5 +1,5 @@
-import "/static/javascript/amazon-cognito-identity.min.js";
-import * as CONFIG from "/static/javascript/CONFIG.js";
+import "./amazon-cognito-identity.min.js";
+import * as CONFIG from "./CONFIG.js";
 
 const signIn = function(){
         const password = document.getElementById('password').value;

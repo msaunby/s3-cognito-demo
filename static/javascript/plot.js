@@ -3,7 +3,7 @@ import "https://cdn.plot.ly/plotly-2.18.0.min.js";
 
 // My S3 bucket get URL func. This doesn't download data,
 // it just provides a temporary signed URL.
-import {s3url} from "/static/javascript/s3url.js";
+import {s3url} from "./s3url.js";
 
 // Sample Data is CSV so use the D3 fetch function.
 import { csv } from "https://cdn.skypack.dev/d3-fetch@3";
