@@ -1,6 +1,6 @@
+import "/static/javascript/amazon-cognito-identity.min.js";
+import * as CONFIG from "/static/javascript/CONFIG.js";
 
-const AWS_COGNITO_USER_POOL_ID = 'eu-west-2_7EYlL3eMQ';
-const AWS_COGNITO_USER_POOL_CLIENT_ID = 'ffjmv51r3e7s0ht3b4eo7s93c';
 const REDIRECT_TO = 'index.html';
 
 const signIn = function(){
@@ -14,9 +14,10 @@ const signIn = function(){
         Password : password
     }    
     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+
     var poolData = {
-        UserPoolId : AWS_COGNITO_USER_POOL_ID,
-        ClientId : AWS_COGNITO_USER_POOL_CLIENT_ID
+        UserPoolId : CONFIG.AWS_COGNITO_USER_POOL_ID,
+        ClientId : CONFIG.AWS_COGNITO_USER_POOL_CLIENT_ID
     };
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
     var userData = {
@@ -42,3 +43,6 @@ const signIn = function(){
     });
     return false;
 }
+
+
+document.signIn = signIn;
