@@ -9,7 +9,7 @@
     Object.keys(localStorage).forEach(element => {
         localStorage.removeItem(element);
     });
-    document.location.replace('/');
+    window.history.back();
     </script>
 </body>
 </html>

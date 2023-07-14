@@ -5,17 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>s3-cognito-demo</title>
-    <script src="javascript/amazon-cognito-identity.min.js"></script>
-    <script src="javascript/aws-sdk.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script type="module" src="javascript/authenticate.js"></script>
 </head>
 
 <body>
-    <H1>Demo</H1>
+    <H1>Example of AWS Cognito for static content</H1>
     <div id="LogInOut"></div>
     <hr>
-    <div id="s3ListOut"></div>
-    <script src="javascript/authenticate.js"></script>
-
     <h2>Protected content</h2>
     <p>
         Only authenticated users can access this content.

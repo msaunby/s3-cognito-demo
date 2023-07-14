@@ -1,8 +1,6 @@
 import "/static/javascript/amazon-cognito-identity.min.js";
 import * as CONFIG from "/static/javascript/CONFIG.js";
 
-const REDIRECT_TO = 'index.html';
-
 const signIn = function(){
         const password = document.getElementById('password').value;
         const username = document.getElementById('username').value;
@@ -28,8 +26,7 @@ const signIn = function(){
     
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
-            console.log("YES.  YOU'VE LOGGED IN.");
-            location.href = REDIRECT_TO;
+            window.history.back();
         },
         onFailure: function(err) {
             console.log("Authentication failed.");
