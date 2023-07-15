@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>signout</title>
+</head>
+<body>
+    <script>
+    Object.keys(localStorage).forEach(element => {
+        localStorage.removeItem(element);
+    });
+    window.history.back();
+    </script>
+</body>
+</html>
