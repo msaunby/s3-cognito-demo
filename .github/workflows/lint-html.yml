@@ -1,0 +1,32 @@
+# Use a Gruntfile to check specified files for HTML errors 
+name: Lint HTML with Grunt
+
+# Run this workflow on a push to any branch,
+# on pull-requests, and on demand.
+on:
+  push:
+    branches: "**"
+  pull_request:
+    branches: "main"
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "18.x"
+
+jobs:
+  build:
+    name: Lint HTML
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3      
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+
+    # If Gruntfile.js is present run grunt.
+    - name: Install and run Grunt
+      run: |
+        if [ -f Gruntfile.js ]
+        then npm install grunt-html --save-dev; grunt; fi
