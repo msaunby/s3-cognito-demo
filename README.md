@@ -45,3 +45,56 @@ S3_BUCKET_NAME = 'protected.saunby.net';
 AWS_COGNITO_USER_POOL_PROVIDER = 'cognito-idp.eu-west-2.amazonaws.com/eu-west-2_XXXXXXXX';
     
 ```
+
+## IAM Role
+
+Requires trust relationship
+```
+{
+    "Version": "2008-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Federated": "arn:aws:iam::000000000000:oidc-provider/token.actions.githubusercontent.com"
+            },
+            "Action": "sts:AssumeRoleWithWebIdentity",
+            "Condition": {
+                "StringEquals": {
+                    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+                },
+                "StringLike": {
+                    "token.actions.githubusercontent.com:sub": "repo:msaunby/s3-cognito-demo:*"
+                }
+            }
+        }
+    ]
+}
+```
+And Permissions
+```
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Action": [
+				"s3:PutObject",
+				"s3:PutObjectAcl"
+			],
+			"Resource": [
+				"arn:aws:s3:::demo1.saun.by/*"
+			],
+			"Effect": "Allow"
+		},
+		{
+			"Action": [
+				"s3:ListBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::demo1.saun.by"
+			],
+			"Effect": "Allow"
+		}
+	]
+}
+```
